@@ -46,6 +46,13 @@ li {
     </ul>
 </div>
 <div>
+ <audio id="music1" controls="controls" autoplay="autoplay" preload id="music1" hidden>
+   <source src="https://github.com/zxp180/react-antd-demo/blob/master/src/assets/images/x.mp3" />
+ </audio>
+   <!--这里是音乐-->
+   <img id="btn" class="active" src="" alt="" />
+   <!--这里是一个可以控制背景音乐播放暂停的开关-->
+	
   <audio id="audio" src="https://github.com/zxp180/react-antd-demo/blob/master/src/assets/images/x.mp3" controls="controls" autoplay="autoplay">
   </audio>
 </div>
@@ -67,8 +74,24 @@ var $bannerUl=$('#banner ul'),$bannerLi=$('#banner ul li');
             */
         });
     },3000);
-var audio=document.getElementById("audio");
+var audio = document.getElementById('music1');
+$("#btn").bind("touchstart", function bf() {
+ 
+if(audio !== null) {
+//检测播放是否已暂停.audio.paused 在播放器播放时返回false.
+//alert(audio.paused);
+if(audio.paused) {
+audio.play(); //audio.play();// 这个就是播放
+$("#btn").addClass("active")
+} else {
+audio.pause(); // 这个就是暂停
+$("#btn").removeClass("active")
+}
+}
+})
+$("html").one('touchstart',function(){
 audio.play();
+})
 </script>
 
 </body>
