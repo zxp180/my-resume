@@ -1,77 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Evan You</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Rubik:300,500,700" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.x.x/css/swiper.min.css">
+
+    <!-- Demo styles -->
   <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
     body {
-      font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      font-size: calc(10px + 0.33vw);
-      -webkit-font-smoothing: antialiased;
-      padding: 5vh 10vw;
-      color: #121314;
+        background: #000;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
     }
-    h1 {
-      font-size: 4.5em;
-      font-weight: 500;
-      margin-bottom: 0;
+    .swiper-container {
+        width: 100%;
+        height: 100%;
     }
-    p {
-      font-size: 1.6em;
-      font-weight: 300;
-      line-height: 1.4;
-      max-width: 26em;
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #000;
+        
     }
-    a {
-      text-decoration: none;
-      color: #121314;
-      position: relative;
-    }
-    a:after {
-      content: "";
+    .swiper-slide img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       position: absolute;
-      z-index: -1;
-      top: 60%;
-      left: -0.1em;
-      right: -0.1em;
-      bottom: 0;
-      transition: top 200ms cubic-bezier(0, .8, .13, 1);
-      background-color: rgba(79,192,141,0.5);
+      left: 50%;
+      top: 50%;
     }
-    a:hover:after {
-      top: 0%;
-    }
-  </style>
+  </style>  
+  
 </head>
 <body>
-  <h1>Hello.</h1>
-  <p style="font-weight:500; font-size:2.2em">
-    My name is 张小平.
-  </p>
-  <p>
-    I am an independent software developer and the creator of the open source JavaScript framework
-    <a href="https://vuejs.org" target="_blank">Vue.js</a>.
-    Most of my work is open source and publicly available on
-    <a href="https://github.com/zxp180" target="_blank">GitHub</a>.
-  </p>
-  <p>
-    I have an <a href="https://blog.evanyou.me" target="_blank">old blog</a>
-    which I no longer actively update - you probably want to follow me on
-    <a href="https://twitter.com/zxp180zxp" target="_blank">Twitter</a> and
-    <a href="https://medium.com/ target="_blank">Medium</a>
-    for more up-to-date content.
-  </p>
-  <p>
-    If you happen to speak Chinese, my Chinese name is 张小平. you can also find me on
-    <a href="https://www.weibo.com" target="_blank">微博</a> and
-    <a href="https://www.zhihu.com" target="_blank">知乎</a>.
-  </p>
-  <p>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+                <img data-src="https://raw.githubusercontent.com/zxp180/react-antd-demo/master/src/assets/images/111.jpg" class="swiper-lazy">
+                <!-- Preloader image -->
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+            <div class="swiper-slide">
+                <img data-src="https://raw.githubusercontent.com/zxp180/react-antd-demo/master/src/assets/images/222.jpg" class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+            <div class="swiper-slide">
+                <img data-src="https://raw.githubusercontent.com/zxp180/react-antd-demo/master/src/assets/images/333.jpg" class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+      </div>
+      <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+            
+            
+    </div>
     
-    I enjoy video games, karaoke, sushi and collecting watches.
-  </p>
+
+    <!-- Swiper JS -->
+    <script src="../dist/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.x.x/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.x.x/js/swiper.min.js"></script>
+  
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+    </script>
 </body>
 </html>
